@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html id="theme" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>about</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="index.html" class="logo">vilhelm_saxild</a>
+        <ul id="menu">
+          <li><a href="about.html">about</a></li>
+          <li><a href="portfolio.html">projects</a></li>
+          <li><a href="contacts.html">contacts</a></li>
+        </ul>
+        <div id="burger_btn" class="hidden">
+          <div class="stroke top"></div>
+          <div class="stroke center"></div>
+          <div class="stroke bottom"></div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <h2>about</h2>
+      <section class="about">
+        <h3 class="sidehead">scroll_for_at_læse_mere</h3>
+        <div id="picture_box">
+          <div id="image">
+            <img src="img/portræt_venstre.webp" alt="selvportræt" />
+            <img src="img/portræt_højre.webp" alt="selvportræt" />
+            <img src="img/selvportræt.webp" alt="selvportræt" />
+          </div>
+          <a
+            class="visit"
+            href="https://documentcloud.adobe.com/link/track?uri=urn:aaid:scds:US:171cbf1b-5692-4a1a-a720-3a86133f61c7"
+            >besøg_mit_cv</a
+          >
+        </div>
+        <h3 class="sidehead">scroll_for_at_læse_mere</h3>
+        <h2 class="beskrivelse">
+          Mit navn er <strong>Vilhelm Lindinger Saxild</strong>. Og jeg studerer
+          til Multimediedesigner på KEA.
+        </h2>
+        <h2 id="transparent" class="beskrivelse">
+          Jeg har altid været interesseret i mennesker, byen omkring mig,
+          kulturen og det er oftest dér jeg finder min inspiration.
+        </h2>
+        <h2 class="beskrivelse">
+          Jeg kan godt lide at udfordre mig selv og prøve nye ting af hele
+          tiden. På studiet har jeg, i hvert et projekt forsøgt at, prøve en ny
+          grafisk stilart af, en ny måde at kode på og en ny tilgang, hver gang!
+        </h2>
+        <h2 id="transparent2" class="beskrivelse">
+          Jeg drømmer om at skabe digitale visuelle og kunstneriske oplevelser,
+          som fremkalder sanserne.
+        </h2>
+      </section>
+    </main>
+    <footer>
+      <div id="light_buttons">
+        <button class="theme_buttons" onclick="on()">dark_theme</button>
+        <button class="theme_buttons" onclick="off()">light_theme</button>
+      </div>
+    </footer>
+    <script src="burger.js"></script>
+    <script src="theme.js"></script>
+    <script src="presentation.js"></script>
+  </body>
+</html>

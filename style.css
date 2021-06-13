@@ -1,0 +1,654 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+img,
+video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+main {
+  background: white;
+}
+
+.light_dark {
+  filter: invert(1);
+}
+
+.no_invert {
+  filter: invert(1);
+}
+
+/****** Header *******/
+header {
+  position: sticky;
+  background-color: white;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+#menu {
+  background-color: black;
+  display: flex;
+  padding: 20px;
+  z-index: 10;
+}
+
+@media (max-width: 700px) {
+  #menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50vw;
+    height: 100vh;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    transition: transform 0.3s;
+    transform: translateX(-100%);
+    overflow: hidden;
+  }
+
+  nav {
+    flex-basis: 100%;
+  }
+}
+
+.logo {
+  color: black;
+  font-size: 1.2rem;
+  padding: 10px;
+}
+
+header {
+  z-index: 100;
+}
+
+#menu.open {
+  transform: translateX(0);
+  overflow: hidden;
+}
+
+#menu a {
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  display: block;
+  padding: 5px;
+}
+
+a {
+  text-decoration: none;
+  font-family: futura-pt, sans-serif;
+  font-weight: bold;
+  color: white;
+}
+
+li {
+  list-style: none;
+}
+
+/* #burger_btn */
+
+#burger_btn {
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  overflow: hidden;
+  position: relative;
+}
+
+.stroke {
+  width: 100%;
+  height: 3px;
+  position: absolute;
+  background-color: black;
+  top: calc(50% - 1.5px);
+  left: 0vw;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.stroke.top {
+  transform: translateY(-10px);
+}
+
+.stroke.bottom {
+  transform: translateY(10px);
+}
+
+/* #burger_btn Når den er åben / .open */
+
+#burger_btn.open .stroke.top {
+  transform: translateY(0) rotate(45deg);
+}
+
+#burger_btn.open .stroke.center {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+#burger_btn.open .stroke.bottom {
+  transform: translateY(0) rotate(-45deg);
+}
+
+/****** fonte ******/
+h1 {
+  font-size: clamp(2.1rem, 13.1vw - 0.5rem, 9.3rem);
+  font-family: futura-pt, sans-serif;
+  display: flex;
+  place-content: center;
+  text-align: center;
+  color: transparent;
+  -webkit-text-stroke: 1px black;
+  cursor: crosshair;
+}
+
+h2 {
+  font-family: futura-pt, sans-serif;
+  color: black;
+  padding-top: 12px;
+  text-align: center;
+  align-self: center;
+  padding-bottom: 20px;
+}
+
+h3 {
+  font-family: futura-pt, sans-serif;
+  color: black;
+  padding-top: 12px;
+}
+
+h2:hover {
+  color: transparent;
+  -webkit-text-stroke: 1px black;
+}
+
+h3:hover {
+  color: transparent;
+  -webkit-text-stroke: 1px black;
+}
+
+h1:hover {
+  color: black;
+}
+
+p {
+  max-width: 60ch;
+  font-family: futura-pt, sans-serif;
+  color: black;
+}
+
+p:hover {
+  color: transparent;
+  -webkit-text-stroke: 1px black;
+}
+
+span {
+  font-size: clamp(1.5rem, 9.1vw - 0.3rem, 6.5rem);
+  padding-bottom: 30px;
+}
+
+section a {
+  color: black;
+}
+
+section a:hover {
+  color: transparent;
+  -webkit-text-stroke: 1px black;
+}
+
+div p {
+  margin-bottom: 15px;
+}
+
+.henvendelse {
+  display: flex;
+  place-content: center;
+  padding: 20px;
+}
+
+.beskrivelse {
+  line-height: 1.4;
+  padding-top: 20px;
+}
+
+#transparent,
+#transparent2 {
+  color: transparent;
+  -webkit-text-stroke: 1px black;
+}
+
+#transparent:hover,
+#transparent2:hover {
+  color: black;
+}
+
+/****** Knapper og kasser *******/
+.theme_buttons {
+  background-color: transparent;
+  padding: 10px;
+  cursor: pointer;
+  font-family: futura-pt, sans-serif;
+  border: 1px solid black;
+}
+
+.theme_buttons:hover {
+  background-color: black;
+  color: white;
+}
+
+.visit {
+  background-color: transparent;
+  padding: 10px;
+  cursor: pointer;
+  font-family: futura-pt, sans-serif;
+  border: 1px solid black;
+}
+
+#light_buttons {
+  display: flex;
+  place-content: center;
+  gap: 20px;
+}
+
+.boxes div,
+.projects div,
+.presentation div,
+.about div,
+.collage div,
+.form div {
+  border: 1px solid black;
+  margin: 10px;
+}
+
+#husk_lorten,
+#mugosten,
+#ux_pitch,
+#techno_baby,
+#high_diving,
+#vester_vov_vov {
+  border: 1px solid black;
+  transition: ease 1s;
+}
+
+#husk_lorten:hover,
+#mugosten:hover,
+#ux_pitch:hover,
+#techno_baby:hover,
+#high_diving:hover,
+#vester_vov_vov:hover {
+  transform: scale(1.1);
+  transition-duration: 0.6s;
+  transition-delay: 0.1s;
+  transition-timing-function: ease-out;
+}
+
+.pil_ned {
+  transform: scale(0.3);
+}
+
+/* Style inputs with type="text", select elements and textareas */
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */
+  border: 1px solid black; /* Gray border */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
+  font-family: futura-pt, sans-serif;
+}
+
+label {
+  font-family: futura-pt, sans-serif;
+}
+
+/* Style the submit button with a specific background color etc */
+input[type="submit"] {
+  background-color: transparent;
+  color: black;
+  padding: 10px;
+  border: 1px solid black;
+  cursor: pointer;
+  font-family: futura-pt, sans-serif;
+}
+
+input[type="submit"]:hover {
+  background-color: black;
+  color: white;
+}
+
+/* Add a background color and some padding around the form */
+.container {
+  background-color: transparent;
+  color: black;
+  border: 1px solid black;
+  padding: 20px;
+  font-family: futura-pt, sans-serif;
+}
+
+footer {
+  background-color: white;
+  padding: 20px;
+  border-top: 1px solid;
+}
+
+/***** Struktur *****/
+section {
+  padding: 20px;
+}
+
+.boxes div {
+  grid-column: 2/3;
+  padding: 30px;
+  line-height: 1.4;
+}
+
+.projects div,
+.form div {
+  grid-column: 2/3;
+  padding: 30px;
+  line-height: 1.4;
+}
+
+.about div {
+  padding: 30px;
+  line-height: 1.4;
+}
+
+.presentation div,
+.collage div {
+  padding: 30px;
+  line-height: 1.4;
+}
+
+.pil_ned {
+  display: none;
+}
+
+address {
+  font-style: normal;
+  text-align: center;
+  display: grid;
+  place-content: center;
+  line-height: 1.4;
+}
+
+#picture_box img {
+  filter: grayscale(1);
+}
+
+.sidehead {
+  display: none;
+}
+
+.about .visit {
+  display: flex;
+  place-content: center;
+}
+
+#picture_box #image {
+  display: flex;
+  gap: 20px;
+}
+
+/***** Mediaqueries *****/
+
+@media (min-width: 701px) {
+  .hidden {
+    display: none;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  header nav {
+    flex-basis: 100%;
+  }
+
+  #menu {
+    background-color: white;
+    gap: 30px;
+  }
+
+  #menu a {
+    color: black;
+  }
+
+  #menu a:hover {
+    color: transparent;
+    -webkit-text-stroke: 1px black;
+  }
+
+  .logo:hover {
+    color: transparent;
+    -webkit-text-stroke: 1px black;
+  }
+
+  .front {
+    padding-top: 160px;
+  }
+
+  section {
+    padding: 30px;
+  }
+
+  .boxes,
+  .projects {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .boxes div,
+  .projects div {
+    grid-column: unset;
+  }
+
+  .boxes img,
+  .projects img {
+    filter: grayscale(1);
+  }
+
+  .boxes img:hover,
+  .projects img:hover {
+    filter: grayscale(0);
+  }
+
+  .form {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+  }
+
+  .form form {
+    grid-column: 2/3;
+  }
+
+  h2 {
+    font-size: 3rem;
+  }
+
+  .boxes h2 {
+    font-size: 1.3rem;
+  }
+
+  .projects h2 {
+    font-size: 1.3rem;
+  }
+
+  .presentation {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+
+  .collage {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .last {
+    grid-column: span 2;
+  }
+
+  .my_contacts {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+  }
+
+  address {
+    grid-column: 2/3;
+    font-style: normal;
+    text-align: center;
+    display: grid;
+    place-content: center;
+  }
+
+  .beskrivelse {
+    padding-top: 0;
+  }
+
+  .about {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr repeat(4, 2fr);
+    gap: 30px;
+  }
+
+  #picture_box {
+    grid-column: 2/3;
+  }
+
+  #picture_box img {
+    max-height: 400px;
+    object-fit: contain;
+  }
+
+  .about h2 {
+    grid-column: 2;
+  }
+}
+
+@media (min-width: 1200px) {
+  .pil_ned {
+    display: grid;
+    grid-column: 5/7;
+    align-self: center;
+  }
+
+  .boxes {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: 1fr repeat(6, 2fr);
+    gap: 30px;
+  }
+
+  .boxes h2 {
+    font-size: 2rem;
+  }
+
+  .boxes div,
+  .projects div {
+    grid-column: 2/3;
+  }
+
+  #husk_lorten {
+    grid-column: 2/6;
+    grid-row: 2/3;
+  }
+
+  #mugosten {
+    grid-column: 6/10;
+    grid-row: 3/4;
+  }
+
+  #ux_pitch {
+    grid-column: 3/7;
+    grid-row: 4/5;
+  }
+
+  #techno_baby {
+    grid-column: 5/9;
+    grid-row: 5/6;
+  }
+
+  #high_diving {
+    grid-column: 2/6;
+    grid-row: 6/7;
+  }
+
+  #vester_vov_vov {
+    grid-column: 6/10;
+    grid-row: 7/8;
+  }
+
+  .projects {
+    display: grid;
+    grid-template-columns: 1fr repeat(3, 2fr) 1fr;
+    gap: 30px;
+  }
+
+  .projects h2 {
+    font-size: 1.4rem;
+  }
+
+  #mug {
+    grid-column: 3/4;
+  }
+
+  #pitch {
+    grid-column: 4/5;
+  }
+
+  #diving {
+    grid-column: 3/4;
+  }
+
+  #vester {
+    grid-column: 4/5;
+  }
+
+  .sidehead {
+    display: grid;
+    align-self: center;
+    place-content: center;
+  }
+
+  .presentation {
+    display: grid;
+    grid-template-columns: 1fr 5fr 6fr 1fr;
+    gap: 30px;
+  }
+
+  #left {
+    grid-column: 2/3;
+  }
+
+  #right {
+    grid-column: 3;
+  }
+
+  .collage {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+
+  .last {
+    grid-column: 3;
+  }
+}

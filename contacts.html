@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html id="theme" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>contacts</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="index.html" class="logo">vilhelm_saxild</a>
+        <ul id="menu">
+          <li><a href="about.html">about</a></li>
+          <li><a href="portfolio.html">projects</a></li>
+          <li><a href="contacts.html">contacts</a></li>
+        </ul>
+        <div id="burger_btn" class="hidden">
+          <div class="stroke top"></div>
+          <div class="stroke center"></div>
+          <div class="stroke bottom"></div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <h2>contacts</h2>
+      <section class="my_contacts">
+        <address>
+          <h3>mine_oplysninger</h3>
+          <p>navn = vilhelm_lindinger_saxild</p>
+          <p>
+            mail = <a href="mailto:vsaxild99@gmail.com">vsaxild99@gmail.com</a>
+          </p>
+          <p>telfonnr = <a href="tel:+4526790925">+45 26 79 09 25</a></p>
+          <p>
+            linkedin =
+            <a href="https://www.linkedin.com/in/vilhelmlindingersaxild/"
+              >min_profil</a
+            >
+          </p>
+        </address>
+      </section>
+      <section class="form">
+        <div>
+          <form action="contacts.html" name="forespørgsel">
+            <h3 class="henvendelse">send_din_henvendelse</h3>
+            <label for="fname">fornavn</label>
+            <input
+              type="text"
+              id="fname"
+              name="firstname"
+              placeholder="dit_fornavn.."
+            />
+
+            <label for="lname">efternavn</label>
+            <input
+              type="text"
+              id="lname"
+              name="lastname"
+              placeholder="dit_efternavn.."
+            />
+
+            <label for="email">e_mail</label>
+            <input
+              type="email"
+              id="email"
+              name="emailaddress"
+              placeholder="din_email.."
+            />
+
+            <label for="subject">din_henvendelse</label>
+            <textarea
+              id="subject"
+              name="subject"
+              placeholder="skriv_din_henvendelse_her.."
+              style="height: 200px"
+            ></textarea>
+
+            <input id="send" onclick="off()" type="submit" value="send" />
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div id="light_buttons">
+        <button class="theme_buttons" onclick="on()">dark_theme</button>
+        <button class="theme_buttons" onclick="off()">light_theme</button>
+      </div>
+    </footer>
+    <script src="burger.js"></script>
+    <script src="theme.js"></script>
+  </body>
+</html>
