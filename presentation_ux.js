@@ -5,7 +5,6 @@ function on() {
   document.getElementById("image3").classList.add("no_invert");
   document.getElementById("image4").classList.add("no_invert");
   document.getElementById("image5").classList.add("no_invert");
-  document.getElementById("spil").classList.add("no_invert");
 }
 
 function off() {
@@ -15,5 +14,4 @@ function off() {
   document.getElementById("image3").classList.remove("no_invert");
   document.getElementById("image4").classList.remove("no_invert");
   document.getElementById("image5").classList.remove("no_invert");
-  document.getElementById("spil").classList.remove("no_invert");
 }

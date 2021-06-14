@@ -272,7 +272,8 @@ div p {
 .presentation div,
 .about div,
 .collage div,
-.form div {
+.form div,
+.spil_wrapper div {
   border: 1px solid black;
   margin: 10px;
 }
@@ -284,7 +285,7 @@ div p {
 #high_diving,
 #vester_vov_vov {
   border: 1px solid black;
-  transition: ease 1s;
+  transition: ease 0.3s;
 }
 
 #husk_lorten:hover,
@@ -294,9 +295,9 @@ div p {
 #high_diving:hover,
 #vester_vov_vov:hover {
   transform: scale(1.1);
-  transition-duration: 0.6s;
+  transition-duration: 0.3s;
   transition-delay: 0.1s;
-  transition-timing-function: ease-out;
+  transition-timing-function: ease;
 }
 
 .pil_ned {
@@ -350,6 +351,15 @@ footer {
   border-top: 1px solid;
 }
 
+#spil {
+  border-width: 0;
+  border-style: none;
+  border-color: transparent;
+  border-image: none;
+  width: 900px;
+  height: 506.25px;
+}
+
 /***** Struktur *****/
 section {
   padding: 20px;
@@ -366,6 +376,10 @@ section {
   grid-column: 2/3;
   padding: 30px;
   line-height: 1.4;
+}
+
+.spil_wrapper div {
+  padding: 30px;
 }
 
 .about div {
@@ -407,6 +421,10 @@ address {
 #picture_box #image {
   display: flex;
   gap: 20px;
+}
+
+.spil_wrapper {
+  display: none;
 }
 
 /***** Mediaqueries *****/
@@ -654,5 +672,10 @@ address {
 
   .last {
     grid-column: 3;
+  }
+
+  .spil_wrapper {
+    display: flex;
+    justify-content: center;
   }
 }
