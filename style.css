@@ -239,6 +239,11 @@ div p {
   color: black;
 }
 
+.outline {
+  color: transparent;
+  -webkit-text-stroke: 1px black;
+}
+
 /****** Knapper og kasser *******/
 .theme_buttons {
   background-color: transparent;
@@ -273,7 +278,8 @@ div p {
 .about div,
 .collage div,
 .form div,
-.spil_wrapper div {
+.spil_wrapper div,
+.diving_film div {
   border: 1px solid black;
   margin: 10px;
 }
@@ -352,12 +358,9 @@ footer {
 }
 
 #spil {
-  border-width: 0;
-  border-style: none;
-  border-color: transparent;
-  border-image: none;
-  width: 900px;
-  height: 506.25px;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  width: 100%;
 }
 
 /***** Struktur *****/
@@ -378,7 +381,8 @@ section {
   line-height: 1.4;
 }
 
-.spil_wrapper div {
+.spil_wrapper div,
+.diving_film div {
   padding: 30px;
 }
 
@@ -421,10 +425,6 @@ address {
 #picture_box #image {
   display: flex;
   gap: 20px;
-}
-
-.spil_wrapper {
-  display: none;
 }
 
 /***** Mediaqueries *****/
@@ -563,6 +563,24 @@ address {
   .about h2 {
     grid-column: 2;
   }
+
+  .spil_wrapper {
+    display: grid;
+    grid-template-columns: 1fr 6fr 1fr;
+  }
+
+  .spil_wrapper div {
+    grid-column: 2;
+  }
+
+  .diving_film {
+    display: grid;
+    grid-template-columns: 1fr 6fr 1fr;
+  }
+
+  .diving_film div {
+    grid-column: 2;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -667,15 +685,9 @@ address {
   .collage {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
   }
 
   .last {
     grid-column: 3;
-  }
-
-  .spil_wrapper {
-    display: flex;
-    justify-content: center;
   }
 }
