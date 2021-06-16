@@ -252,6 +252,8 @@ div p {
 .outline {
   color: transparent;
   -webkit-text-stroke: 1px black;
+  grid-column: 2;
+  text-align: center;
 }
 
 /****** Knapper og kasser *******/
@@ -276,7 +278,8 @@ div p {
   border: 1px solid black;
 }
 
-#light_buttons {
+#light_buttons,
+.light_buttons {
   display: flex;
   place-content: center;
   gap: 20px;
@@ -448,6 +451,10 @@ address {
   gap: 20px;
 }
 
+.full_page {
+  min-height: 83vh;
+}
+
 /***** Mediaqueries *****/
 
 @media (min-width: 701px) {
@@ -505,11 +512,15 @@ address {
   .boxes img,
   .projects img {
     filter: grayscale(1);
+    transition: ease;
+    transition-duration: 0.5s;
   }
 
   .boxes img:hover,
   .projects img:hover {
     filter: grayscale(0);
+    transition: ease;
+    transition-duration: 0.5s;
   }
 
   .form {
@@ -726,10 +737,12 @@ address {
     gap: 30px;
   }
 
+  .left,
   #left {
     grid-column: 2/3;
   }
 
+  .right,
   #right {
     grid-column: 3;
   }
